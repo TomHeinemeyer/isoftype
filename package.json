@@ -1,0 +1,43 @@
+{
+  "name": "isoftype-ts",
+  "version": "1.0.0",
+  "description": "Determine, if something is of a given Typescript type.",
+  "main": "src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist",
+    "/src",
+    "!test.ts"
+  ],
+  "type": "module",
+  "scripts": {
+    "compile": "tsc -p tsconfig.build.json",
+    "build:clean": "Powershell Remove-Item -LiteralPath './dist' -Force -Recurse -ErrorAction Ignore",
+    "build": "run-s --continue-on-error build:clean compile",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomHeinemeyer/isoftype-ts.git"
+  },
+  "keywords": [
+    "Typescript",
+    "isoftype-ts",
+    "type",
+    "check",
+    "check type"
+  ],
+  "author": "Tom Heinemeyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TomHeinemeyer/isoftype-ts/issues"
+  },
+  "homepage": "https://github.com/TomHeinemeyer/isoftype-ts#readme",
+  "devDependencies": {
+    "@types/jest": "29.5.12",
+    "npm-run-all": "4.1.5",
+    "ts-jest": "29.1.2",
+    "typescript": "5.4.5"
+  }
+}
